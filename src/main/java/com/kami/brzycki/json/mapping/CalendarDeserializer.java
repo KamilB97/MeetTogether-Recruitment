@@ -1,4 +1,4 @@
-package com.kami.brzycki.json;
+package com.kami.brzycki.json.mapping;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;

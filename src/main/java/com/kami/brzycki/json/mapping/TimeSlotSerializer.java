@@ -1,4 +1,4 @@
-package com.kami.brzycki.json;
+package com.kami.brzycki.json.mapping;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializerProvider;
