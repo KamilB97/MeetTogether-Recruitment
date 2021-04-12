@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class JsonFileReaderTest {
 
@@ -21,18 +20,15 @@ class JsonFileReaderTest {
 
     @Test
     @DisplayName("Should Pass When Read Data Is Correct")
-    public void ShouldPassWhenReadDataIsCorrect() {
+    public void ShouldPassWhenReadDataIsCorrect() throws IOException {
 
         String expected = "{" +
                 "\"start\":\"09:00\"," +
                 "\"end\":\"10:30\"" +
                 "}";
-        try {
+
             String actual = reader.readStringifyJsonFromFile(CALENDAR1_PATH);
             Assertions.assertEquals(expected, actual);
-        } catch (IOException e) {
-            e.printStackTrace();
-            Assertions.fail();
-        }
+
     }
 }
