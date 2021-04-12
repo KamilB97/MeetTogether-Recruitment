@@ -4,7 +4,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.kami.brzycki.error.JsonParseException;
-import com.kami.brzycki.json.mapping.CalendarDeserializer;
 import com.kami.brzycki.model.Calendar;
 import com.kami.brzycki.model.Meeting;
 import com.kami.brzycki.model.WorkingHours;

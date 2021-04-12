@@ -34,6 +34,7 @@ class CalendarServiceTest {
     }
 
     @Test
+    @DisplayName("Should Return Meeting Time Slots When Called")
     public void shouldRetrunMeetingTimeSlotsWhenCalled() throws Exception {
 
         //Given

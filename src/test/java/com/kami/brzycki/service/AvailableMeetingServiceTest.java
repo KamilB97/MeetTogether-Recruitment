@@ -90,7 +90,7 @@ class AvailableMeetingServiceTest {
     }
 
     @Test
-    @DisplayName("Should Return Non Empty List When There Are No Meetings in the calendar And There Are Possible Meeting Time Slots")
+    @DisplayName("Should Return Non Empty List When There Are No Meetings in calendars And There Are Possible Meeting Time Slots")
     public void shouldReturnNonEmptyListWhenNoMeetingsInCalendar() throws Exception {
 
         int meetingDuration = 30;
@@ -104,8 +104,8 @@ class AvailableMeetingServiceTest {
     }
 
     @Test
-    @DisplayName("Should Return Non Empty List When Only One Calendar Have Meetings And There Are Possible Meeting Time Slots")
-    public void shouldReturnNonEmptyListWhenOnlyOneCalendarHaveMeetings() throws Exception {
+    @DisplayName("Should Return Non Empty List When Only One Calendar Contain Meetings And There Are Possible Meeting Time Slots")
+    public void shouldReturnNonEmptyListWhenOnlyOneCalendarContainMeetings() throws Exception {
 
         int meetingDuration = 30;
         Calendar calendar1 = new Calendar();

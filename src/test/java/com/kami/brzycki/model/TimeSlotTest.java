@@ -15,7 +15,8 @@ class TimeSlotTest {
 
 
     @Test
-    public void shouldPassWhenReturnCorrectTimeSlotDuration() {
+    @DisplayName("Should Return Correct Time Slot Duration")
+    public void shouldReturnCorrectTimeSlotDuration() {
 
         TimeSlot timeSlot = new TimeSlot("10:30", "13:00");
         int duration = 150;
@@ -25,7 +26,7 @@ class TimeSlotTest {
 
     @Test
     @DisplayName("Should Return Ascending Sorted TimeSlot List When Sorted ")
-    public void shouldReturnAscendingSortedTimeSlotWhenSort() {
+    public void shouldReturnAscendingSortedTimeSlotsWhenSort() {
 
         List<TimeSlot> expectedSortedTimeSlots = getCorrectlySortedTimeSlotList();
 

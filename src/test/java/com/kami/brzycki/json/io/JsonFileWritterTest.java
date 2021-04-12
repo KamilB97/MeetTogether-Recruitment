@@ -1,11 +1,8 @@
 package com.kami.brzycki.json.io;
 
-import org.junit.Assert;
-import org.junit.Before;
 import org.junit.jupiter.api.*;
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;

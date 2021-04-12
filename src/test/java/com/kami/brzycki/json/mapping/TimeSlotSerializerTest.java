@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.kami.brzycki.json.mapping.TimeSlotSerializer;
 import com.kami.brzycki.model.TimeSlot;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -14,7 +15,8 @@ import java.util.List;
 class TimeSlotSerializerTest {
 
     @Test
-    public void shouldReturnValidJsonArrayWhenSerialize() throws JsonProcessingException {
+    @DisplayName("Should Return Valid Json Array When Serialize List of TimeSlot")
+    public void shouldReturnJsonArrayWhenSerialize() throws JsonProcessingException {
 
         ObjectMapper mapper = new ObjectMapper();
         SimpleModule module = new SimpleModule();

@@ -69,7 +69,6 @@ class FileServiceTest {
         when(fileReader.readStringifyJsonFromFile(path)).thenReturn(json);
         when(mappingService.deserializeJsonCalendar(json)).thenReturn(calendar);
         //Then
-
         Assertions.assertEquals(calendar, fileService.readCalendarFromJsonFile(path));
 
     }

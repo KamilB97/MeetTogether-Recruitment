@@ -19,8 +19,8 @@ class JsonFileReaderTest {
     }
 
     @Test
-    @DisplayName("Should Pass When Read Data Is Correct")
-    public void ShouldPassWhenReadDataIsCorrect() throws IOException {
+    @DisplayName("Should Return Correct Data When Read the file")
+    public void shouldReturnCorrectDataWhenRead() throws IOException {
 
         String expected = "{" +
                 "\"start\":\"09:00\"," +
