@@ -1,4 +1,4 @@
-package com.kami.brzycki.algorithm;
+package com.kami.brzycki.service;
 
 import com.kami.brzycki.model.Calendar;
 import com.kami.brzycki.model.Meeting;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class MeetTogetherAlgorithm {
+public class AvailableMeetingService {
 
     private static final int TIME_INTERVAL_BETWEEN_PROPOSED_MEETINGS = 5;
 
@@ -77,22 +77,22 @@ public class MeetTogetherAlgorithm {
         if (allMeetings.size() != 0) {
             for (int currentMeetingIndex = 0; currentMeetingIndex < allMeetings.size(); currentMeetingIndex++) {
 
-                LocalTime thisMeetingEndTime = allMeetings.get(currentMeetingIndex).getEnd();
+                LocalTime currentMeetingEndTime = allMeetings.get(currentMeetingIndex).getEnd();
                 TimeSlot meetingTimeSlotCandidate = null;
 
                 int nextMeetingIndex = currentMeetingIndex + 1;
                 if (nextMeetingIndex < allMeetings.size()) {
 
                     LocalTime nextMeetingStartTime = allMeetings.get(nextMeetingIndex).getStart();
-                    if (nextMeetingStartTime.compareTo(thisMeetingEndTime) > 0) {
-                        meetingTimeSlotCandidate = new TimeSlot(thisMeetingEndTime, nextMeetingStartTime);
+                    if (nextMeetingStartTime.compareTo(currentMeetingEndTime) > 0) {
+                        meetingTimeSlotCandidate = new TimeSlot(currentMeetingEndTime, nextMeetingStartTime);
                     }
 
                 } else if (nextMeetingIndex == allMeetings.size()) {
 
                     LocalTime workHoursEndTime = commonWorkHours.getEnd();
-                    if (thisMeetingEndTime.compareTo(workHoursEndTime) < 0) {
-                        meetingTimeSlotCandidate = new TimeSlot(thisMeetingEndTime, workHoursEndTime);
+                    if (currentMeetingEndTime.compareTo(workHoursEndTime) < 0) {
+                        meetingTimeSlotCandidate = new TimeSlot(currentMeetingEndTime, workHoursEndTime);
                     }
                 }
 
