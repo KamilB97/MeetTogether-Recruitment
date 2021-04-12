@@ -35,7 +35,7 @@ class JsonFileWritterTest {
 
     @Test
     @DisplayName("Should Pass when Create File")
-    public void shouldPassWhenCreateFile() {
+    public void shouldPassWhenCreateFile() throws IOException {
 
         writter.writeStringifyJsonToFile("", CREATE_TEST_FILE_PATH);
         File file = new File(CREATE_TEST_FILE_PATH);
@@ -44,7 +44,7 @@ class JsonFileWritterTest {
 
     @Test
     @DisplayName("Should Pass When Created File Contains Correct Content")
-    public void shouldPassWhenCreatedFileContainsCorrectContent() {
+    public void shouldPassWhenCreatedFileContainsCorrectContent() throws IOException {
         String expected =
                 "{\"working_hours\":{" +
                         "\"start\":\"09:00\"," +
@@ -56,13 +56,11 @@ class JsonFileWritterTest {
                         "\"end\":\"10:30\"" +
                         "}]" +
                         "}";
-        try {
+
             writter.writeStringifyJsonToFile(expected, CREATE_CONTENT_TEST_FILE_PATH);
             String actual = readJsonFile(CREATE_CONTENT_TEST_FILE_PATH);
             Assertions.assertEquals(expected, actual);
-        } catch (IOException e) {
-            Assertions.fail();
-        }
+
     }
 
     private String readJsonFile(String path) throws IOException {
