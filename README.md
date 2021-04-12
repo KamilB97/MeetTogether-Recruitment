@@ -13,8 +13,9 @@ Data directory (./data) contains two directories: input, where two calendar.json
 Program takes as input two calendar files that are placed at ./data/input/calendar1.json and ./data/input/calendar2.json
 It is required to preserve calendar1.json and calenda2.json file names, as they are used by program to load calendars data.
 
-After program launch you will be asked to insert requested meeting duration time in hh:mm format.
-Program output will appear at console as well as will be saved at ./data/output/result.json
+After program launch you will be asked to insert requested meeting duration time in hh:mm format ex. "00:20".
+Program output will appear at the console as well as will be saved at ./data/output/result.json.
+Class AvailableMeetingService contains "TIME_INTERVAL_BETWEEN_PROPOSED_MEETINGS" final variable which can be modified to change interval between each next proposed meeting. By default it is set to 5 which means, the interval is 5 minute long.
 
 
 Json calendar input format
@@ -84,4 +85,4 @@ example output
       "start":"18:00",
       "end":"18:30"
     }
-] ```
+]```
