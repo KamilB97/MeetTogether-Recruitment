@@ -21,32 +21,8 @@ public class Calendar {
     }
 
     public void addMeeting(Meeting meeting) {
-        boolean isAdded = false;
 
-        if (!meetingConflictOccurs(meeting)) {
-            planedMeetings.add(meeting);
-            isAdded = true;
-        } else {
-            throw new RuntimeException("Meeting collision");
-        }
+        planedMeetings.add(meeting);
+
     }
-
-    private boolean meetingConflictOccurs(Meeting meeting) {
-
-        long collisions = planedMeetings.stream().filter(currentMeeting -> {
-            boolean isCollision = false;
-
-            if ((currentMeeting.getStart().compareTo(meeting.getEnd()) < 0 && currentMeeting.getStart().compareTo(meeting.getStart()) >= 0)
-                    || currentMeeting.getEnd().compareTo(meeting.getStart()) > 0 && currentMeeting.getEnd().compareTo(meeting.getEnd()) <= 0) {
-
-                isCollision = true;
-            }
-
-            return isCollision;
-        }).count();
-
-        return collisions > 0 ? true : false;
-    }
-
-
 }
