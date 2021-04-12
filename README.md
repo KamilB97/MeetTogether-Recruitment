@@ -17,6 +17,12 @@ After program launch you will be asked to insert requested meeting duration time
 Program output will appear at the console as well as will be saved at ./data/output/result.json.
 Class AvailableMeetingService contains "TIME_INTERVAL_BETWEEN_PROPOSED_MEETINGS" final variable which can be modified to change interval between each next proposed meeting. By default it is set to 5 which means, the interval is 5 minute long.
 
+### Build
+
+Folder build contains executable .jar with lib and data directories. To run this app copy build folder. Run CMD/Terminal inside this folder. Then invoke below command:
+#### `java -jar meetTogether.jar`
+
+### Data structure
 
 Json calendar input format
 <calendar1.json>
