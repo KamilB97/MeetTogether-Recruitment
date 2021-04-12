@@ -96,6 +96,7 @@ class CalendarServiceTest {
         when(fileService.readCalendarFromJsonFile(CALENDAR1_PATH)).thenReturn(calendar1);
         //Then
         assertEquals(calendar1, calendarService.readCalendar1());
+        verify(fileService).readCalendarFromJsonFile(CALENDAR1_PATH);
     }
 
     @Test
@@ -116,6 +117,7 @@ class CalendarServiceTest {
         when(fileService.readCalendarFromJsonFile(CALENDAR2_PATH)).thenReturn(calendar2);
         //Then
         assertEquals(calendar2, calendarService.readCalendar2());
+        verify(fileService).readCalendarFromJsonFile(CALENDAR2_PATH);
     }
 
 }

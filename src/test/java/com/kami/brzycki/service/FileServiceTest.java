@@ -14,8 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 class FileServiceTest {
 
@@ -70,6 +69,8 @@ class FileServiceTest {
         when(mappingService.deserializeJsonCalendar(json)).thenReturn(calendar);
         //Then
         Assertions.assertEquals(calendar, fileService.readCalendarFromJsonFile(path));
+        verify(fileReader).readStringifyJsonFromFile(path);
+        verify(mappingService).deserializeJsonCalendar(json);
 
     }
 }
